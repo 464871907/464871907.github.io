@@ -82,25 +82,25 @@
 	padding-top: 5px;
 }
 .number{
-	float: right;
 	width: 170px;
+	height: 100px;
 	margin-left: 20px;
 }
 .number p{
 	width: 170px;
 	height: 20px;
-	padding-top: 28px;
+	padding-top: 16px;
 	color: white;
 	font-size: 20px;
 	text-align: center;
 }
 .number span{
-	display: inline-block;
+	display: block;
 	height: 28px;
 	width: 170px;
 	text-align: center;
-	padding-top: 20px;
-	background: url(../pic/check-bg.png) no-repeat 32px 16px;
+	padding-top: 30px;
+	background: url(../pic/check-bg.png) no-repeat 42px 30px;
 	color: yellow;
 }
 
@@ -128,15 +128,13 @@ form{
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	font-size: 13px;
-	color: #CCC;
-		
+	color: #CCC;	
 }
 .submit{
 	float: right;
 	width: 40px;
-	height: 30px;
+	height: 33px;
 	background: url(../pic/go.png) no-repeat;
-
 }
 .nav{
 	height: 44px;
@@ -171,12 +169,14 @@ form{
 	height: 1300px;
 	margin: 26px auto 0 auto;
 	background: url(../pic/content-bg.png);
+	
 }
 .banner{
 	width: 944px;
 	height: 312px;
 	margin:0px auto;
 	position: relative;
+	opacity: 0.8;
 }
 .banner ul li img{
 	position: absolute;
@@ -320,6 +320,13 @@ form{
 	display: block;
 
 }
+.followitem li a:hover{
+	color: red;
+}
+.ulMulu li a:hover{
+	color: red;
+	border-bottom:none;
+	}
 .payment{
 	height: 200px;
 	margin-top: 30px;
@@ -332,4 +339,175 @@ form{
 	margin-top: 30px;
 	margin-right: 26px;
 	padding-left: 22px;
+}
+.pTitle{
+	float: left;
+	width: 708px;
+	height: 80px;
+}
+.pTitle dt{
+	float: left;
+}
+.shiftlist{
+	float: left;padding-right:20px;color: #999999;
+}
+.shiftlist h4{
+	float: left;
+	font-size: 12px;
+	font-weight: bold;
+	border: 1px solid gray;
+	line-height: 18px;
+	width: 110px;
+	display: inline-block;
+
+}
+.shiftlist ul{
+	width: 110px;
+	height:70px;
+	background-color:#d3d3d3;
+	border: 1px solid gray;
+	display: none;
+
+}
+.pTitle dd h4 a{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	overflow: hidden;
+	float: right;
+	background: url(../pic/icon-1.png) no-repeat left top;
+}
+.pTitle dd h4 a:hover{
+	background: url(../pic/icon-1.png) no-repeat -18px top;
+}
+.page{
+	float: right;
+}
+.page  ul li{
+	padding-right:4px;
+	float: left; 
+}
+.page  ul li a{
+	text-decoration: underline;
+}
+.pActive{
+	color: red!important;
+}
+.iProducts h2{
+	margin-top: 28px;
+	margin-bottom: 20px;
+	color: #666666;
+}
+.product-row{
+	width: 712px;
+	height: 150px;
+	margin: 20px 0;
+}
+.product-row li{
+	float: left;
+	padding-right: 24px;
+}
+.product-row li em{
+	color: red;
+}
+.pagenum{
+	width: 706px;
+	height: 26px;
+	border-bottom: 1px solid #999999;
+	text-align:center;
+	margin-top: 32px;
+}
+.pagenum a{
+	display: inline-block;
+	color: #b20e00;	
+	height: 20px;
+	padding: 2px 8px 0 8px;
+}
+.active,.pagenum a:hover{
+	background-color: #b20e00;
+	color:#ffffff!important;
+
+}
+
+/*轮播*/
+.lunbo{
+	width: 706px;
+	height: 260px;
+}
+.lunbo h2{
+	color: #666666;
+	font-size: 18px;
+	padding: 36px 0;
+}
+.lunbo div,.lunbo div span,.lunbo div span strong{
+	width: 706px;
+	height: 186px;
+	background:url(../pic/scroll_bg.gif) repeat-x left -484px;
+
+}
+.lunbo div span{
+	display:block;
+	background:url(../pic/scroll_bg.gif) no-repeat left -92px;
+
+}
+.lunbo div span strong{
+	display: block;
+	background:url(../pic/scroll_bg.gif) no-repeat right -288px;
+	position: relative;
+}
+.change1{
+	display: block;
+	width: 35px;
+	height: 40px;
+	background:url(../pic/scroll_bg.gif) no-repeat;
+	position: absolute;
+	top: 65px;
+	left: 0;
+}
+.change2{
+	display: block;
+	width: 35px;
+	height: 40px;
+	background:url(../pic/scroll_bg.gif) no-repeat right -46px;
+	position: absolute;
+	top: 65px;
+	right: 0;
+}
+#shift{
+	width: 560px;
+	height: 142px;
+	padding-top:26px;
+	padding-left:80px;
+}
+#shift a{
+	padding-right:28px;
+}
+.footer{
+background: url(../pic/footer-bg.png) repeat-x;
+height:302px;
+}
+.footTop{
+	width: 950px;
+	height: 60px;
+	margin: 0 auto;
+	font-size: 10px;
+}
+.footTop h2:first-child{
+	background: url(../pic/footTop1.png) no-repeat;
+	width: 270px;
+}
+.footTop h2+h2{
+	background: url(../pic/footTop2.png) no-repeat left 10px;
+	width: 250px;
+}
+.footTop h2{
+	float: left;
+	color: #cbcbcb;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 62px;
+}
+.searchBot{
+	float: right;
+	margin-top: 12px;
 }
