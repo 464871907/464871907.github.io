@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>修改文本框的值</title>
+	<meta charset='utf-8'>
+<style type="text/css">
+*{
+	margin:0;
+	padding: 0;
+	list-style-type:none;
+}
+#textroom{
+	width: 400px;
+	height: 120px;
+	margin: 0 auto;
+	border:1px solid green;	
+	position: relative;
+}
+h2{
+	width: 400px;
+	height: 40px;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 30px;
+	background:green;
+	color: white;
+}
+.save,.cancel{
+	color: green;
+	border:none;
+	font-size: 20px;
+	position: absolute;
+	display: none;
+	line-height: 40px;
+
+}
+.cancel{
+	right:20px;
+}
+.save{
+	right: 100px;
+}
+#shuru{
+	height: 40px;
+	font-size: 20px;
+	display: none;
+}
+p{	width: 240px;
+	height: 40px;
+	position: absolute;
+	background: red;
+
+}
+
+img{
+	width: 40px;
+	height: 40px;
+
+	position: absolute;
+	right: 120px;
+}
+</style>	
+</head>
+<body>
+<ul id="box">
+<li id="textroom">
+	<h2>分类名称</h2>
+	<input type="text" value="" id="shuru" />
+	<p>请输入您的分类</p>
+	<img src="edit.jpg">
+	<input type="button" value="Save" class="save" />
+<input type="button" value="Cancel" class="cancel" />
+
+</li>
+<li id="textroom">
+	<input type="text" value="" id="shuru" />
+	<p>请输入您的分类</p>
+	<img src="edit.jpg">
+	<input type="button" value="Save" class="save" />
+<input type="button" value="Cancel" class="cancel" />
+
+</li>
+<li id="textroom">
+	<input type="text" value="" id="shuru" />
+	<p>请输入您的分类</p>
+	<img src="edit.jpg">
+	<input type="button" value="Save" class="save" />
+<input type="button" value="Cancel" class="cancel" />
+
+</li>
+</ul>
+<script type="text/javascript">
+window.onload=function(){
+var oBox=document.getElementById('box')
+var oLi=oBox.getElementsByTagName('li');
+
+function taolu(i){
+
+var shuru=oLi[i].getElementsByTagName('input')[0];
+var oP=oLi[i].getElementsByTagName('p')[0];
+var oImg=oLi[i].getElementsByTagName('img')[0];
+var oBtn1=oLi[i].getElementsByTagName('input')[1];
+var oBtn2=oLi[i].getElementsByTagName('input')[2];
+
+oImg.onclick=function(){
+oImg.style.display='none';
+oP.style.display='none';
+oBtn1.style.display='inline-block';
+oBtn2.style.display='inline-block';
+shuru.style.display='inline-block'
+shuru.value=oP.innerHTML
+}
+oBtn1.onclick=function(){
+if(shuru.value.length>10){
+alert('长度大于10')
+}
+else{
+oP.innerHTML=shuru.value;
+oBtn1.style.display='none';
+oBtn2.style.display='none';
+shuru.style.display='none';
+oImg.style.display='inline-block';
+oP.style.display='inline-block';
+}}
+oBtn2.onclick=function(){
+oBtn1.style.display='none';
+oBtn2.style.display='none';
+shuru.style.display='none';
+oImg.style.display='inline-block';
+oP.style.display='inline-block';
+}
+}
+for(var i=0;i<oLi.length;i++){
+	taolu(i)
+}
+}
+</script>
+
+
+</body>
+</html>

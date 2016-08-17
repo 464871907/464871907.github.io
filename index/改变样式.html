@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js</title>
+<meta charset="utf-8">
+<style type="text/css">
+#set-btn{
+	color: white;
+	width: 70px;
+	height:35px;
+	background-color: red;
+}
+h1{
+	display: inline;
+}
+#change{
+	width: 100px;
+	height: 100px;
+	border: 8px solid black;
+	display: block;
+}
+#set-div{
+	width: 400px;
+	height: 400px;
+	border: 10px solid gray;
+	position: absolute;
+	top: 30%;
+	left:45%;
+	display: none;
+}
+dd,dt{
+	float: left;
+	
+
+}
+input{
+	width: 40px;
+	height: 40px;
+}
+.button-2{
+	clear: both;
+	text-align: center;
+}
+#reset1,#confirm1{
+	margin-top: 20px;
+}
+</style>
+<script type="text/javascript">
+	window.onload=function ()
+{
+var setStyle=document.getElementById("set-div")
+var setBtn=document.getElementById("set-btn")
+var oDiv=document.getElementById("change")
+var aBtns=document.getElementsByTagName("dd")
+var arr=["red","yellow","blue","200px","300px","400px","200px","300px","400px"]
+var reset=document.getElementById("reset1")
+var confirm=document.getElementById("confirm1")
+setBtn.onclick=function(){
+	if(setStyle.style.display=="block")return false;
+	setStyle.style.display="block";
+}
+for(var i=0;i<aBtns.length;i++){
+ 	aBtns[i].index=i
+	aBtns[i].onclick=function(){
+		if(this.index<3){
+			oDiv.style.background=arr[this.index]
+		}
+		else if(this.index>2&&this.index<6){
+			console.log(this.index)
+			oDiv.style.width=arr[this.index]
+		}
+		else{
+			oDiv.style.height=arr[this.index]
+		}
+	}
+}
+
+reset.onclick=function(){
+	oDiv.style=""
+}
+confirm.onclick=function(){
+	if(setStyle.style.display=="none")return false;
+	setStyle.style.display="none";
+}
+
+}
+</script>
+</head>
+<body>
+<div id="title">
+	<h1>请为下面的DIV设置样式：</h1>
+	<input type="button" value="点击设置" id="set-btn">
+</div>
+<div id="change">
+	
+</div>
+<div id="set-div">
+	<dl>
+		<dt>请选择背景色 :</dt>
+		<dd><input type="button"  value="红"  class="setbutton"></dd>
+		<dd><input type="button" value="黄" class="setbutton"></dd>
+		<dd><input type="button" value="蓝"  class="setbutton"></dd>
+	</dl>
+		<dl>
+		<dt>请选择宽(px) :</dt>
+		<dd><input type="button" value="200"  class="setbutton"></dd>
+		<dd><input type="button" value="300"  class="setbutton"></dd>
+		<dd><input type="button" value="400"  class="setbutton"></dd>
+	</dl>
+		<dl>
+		<dt>请选择高(px) :</dt>
+		<dd><input type="button" value="200" class="setbutton"></dd>
+		<dd><input type="button" value="300"  class="setbutton"></dd>
+		<dd><input type="button" value="400"  class="setbutton"></dd>
+	</dl>
+	<div class="button-2">
+	<input type="button" value="重置" id="reset1">
+	<input type="button" value="确定" id="confirm1">
+	</div>
+	</div>
+
+
+
+
+
+</body>
+</html>

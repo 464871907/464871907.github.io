@@ -1,0 +1,239 @@
+/*Hi,这一个页面是带一小丢自适应的的页面。*/
+/*tomhodor@163.com  _______求工作。*/ 
+
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border: none;
+	text-decoration: none;
+}
+p{
+	color:black;
+	font-size: 16px;
+	font-family: "宋体","Calibri","arial",sans-serif;
+}
+
+
+/*head的圣杯布局*/
+.head-bg{
+	float: left;
+	width: 100%;
+	height: 80px;
+	background-color: #522a5c;
+	
+}
+
+.github{
+	float: left;;
+	width: 200px;
+	height: 80px;
+	margin-left:-200px;
+	background-color: #522a5c;
+	position: relative;
+	right: -200px;
+}
+
+/*媒体查询，自适应样式*/
+@media screen and (max-width:640px){
+.github{display:none;}
+}
+/*屏幕小于960px就会出现滚动条*/
+header{
+	min-width: 640px;
+	overflow:auto;
+	height: 80px;
+	padding-right: 200px;
+}
+
+/*head内部布局*/
+.head-bg p{
+	line-height: 80px;
+	color: white;
+	float: left;
+	font-size: 20px;
+	margin-left: 200px;
+}
+
+.hd-list{
+	float: right;
+	height: 80px;
+	overflow: hidden;
+	padding-right: 80px;
+}
+.hd-list li{
+	margin-top:50px;
+	padding-right: 28px;
+	float: left;
+	display: inline-block;
+}
+.hd-list li a:hover{
+	color: white;
+	font-size: 20px;
+}
+.hd-list li a{
+	font-size: 16px;
+	font-family: "宋体";
+	color: white;
+}
+.github a img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+
+
+
+/*banner*/
+.banner-show{
+	position: relative;
+	width: 100%;
+	height: 525px;
+	background: linear-gradient(to bottom,rgba(255,255,255,0.7),rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%),url(img/banner-bg.jpg);
+}
+.banner-show p,.banner-show h3{
+	color:#522a5c;
+	font-weight: bold;
+}
+.banner-text{
+	width: 375px;
+	height: 122px;
+	background:linear-gradient(to right,rgba(255,255,255,0.8),rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	text-align:left;
+}
+
+
+/*skill*/
+
+.skill{
+	background-color: #eeeeee;
+	padding: 12px 20% 60px 20%;
+
+}
+.skill ul{
+	width:100%;
+	height:100%;
+	margin-bottom: 150px;
+}
+.skill ul li{
+	display: inline-block;
+	margin:0 auto;
+	width: 298px;
+	height: 360px;
+	background-color: white;
+	text-align: center;
+}
+.skill p{
+	padding-top:50px; 
+	color: #ca8fe4;
+	font-weight: bold;
+}
+
+/*自我介绍*/
+.info{
+	width: 100%;
+	height: 525px;
+	background-color: white;
+	position: relative;
+}
+.wrap-img,.info img{
+	width: 160px;
+	height: 160px;
+	position: absolute;
+}
+.wrap-img{
+	left: 50%;
+}
+
+.info img{
+	border-radius: 80px;
+	top: -80px;
+	left:-50%;
+}
+.info-text{
+	position: absolute;
+	width:50%;
+	top: 35%;
+	left: 35%;
+}
+.info-text p{
+	padding-top: 20px;
+	text-indent: 2em;
+}
+
+/*footer*/
+footer{
+	height: 400px;
+	background-color: black;
+	font-size: 14px;
+}
+.list-head{
+	height: 40px;
+	border-bottom: 1px solid #eeeeee;
+	color:white;
+
+}
+.list-head ul{
+	display: table;
+	margin: 0 auto;
+}
+.list-head li{
+	float: left;
+	padding-right: 28px;
+	line-height: 40px;
+}
+.list{
+	display: table;
+	margin: 0 auto;
+}
+.list ul{
+	float: left;
+	margin:60px 200px 0 0;
+}
+.list ul li{
+	padding: 10px;
+}
+.list ul a{
+	color: white;
+}
+.bot{
+	text-align: center;
+}
+
+@media screen and (max-width: 640px){
+.head-bg p{margin: 0;}
+.header-bg{
+	width: 640px;
+	overflow: hidden;
+}
+.skill{
+	padding: 0;
+}
+.skill ul li{
+	width: 100%;
+	text-align: center;
+}
+.info{
+	padding-bottom: 100px;
+}
+footer{
+	display: none;
+}
+.hd-first a{
+	width: 40px;
+	height: 40px;
+	display: block;
+	color:#522a5c;
+	background:url(img/icon-github.png) no-repeat;
+}
+}
+
+
+
+
+
+/*page2-blog*/

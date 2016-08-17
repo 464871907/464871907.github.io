@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8"/>
+<style type="text/css">
+	#show{width:500px;height: 500px;margin: 0 auto;position: relative;}
+	img{
+		width: 500px;height: 500px;border:none;margin:0;padding: 0;}
+	#show span{
+		width: 100px;
+		height: 40px;
+		margin: 0 auto;
+		position: absolute;
+		top: 0;
+		color: yellow;
+	}
+	#show p{width: 100px;
+		margin: 0 auto;
+		position: absolute;
+		bottom:0;
+		color: white;
+	}
+	ul{
+		width: 20px;
+		height: 50px;
+		position: absolute;
+		top: 0;
+		right: -60px;
+	}
+	li{
+		margin-bottom: 60px;
+		background: black;
+	}
+	.active{
+		background: yellow;
+	}
+	#preview{
+		width: 150px;
+		height: 150px;
+		position: absolute;
+		top: 0;
+		right: -250px;
+		display:none;
+	}
+	}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+var Img1=['../img/1.png','../img/2.png','../img/3.png','../img/4.png']
+var Text1=['图片1','图片2','图片3','图片4']	
+var oDiv=document.getElementById('show');
+var oUl=document.getElementById('fuck');
+var oLi = oUl.getElementsByTagName("li");
+var oImg=oDiv.getElementsByTagName('img')[0];
+var oText=oDiv.getElementsByTagName('p')[0]
+var oSpan=oDiv.getElementsByTagName('span')[0]
+var num=0;
+var preImg=document.getElementById('preview');
+var oldLi=oLi[0];
+//初始化
+function fnTab(){
+oImg.src=Img1[num];
+oText.innerHTML=Text1[num];
+oSpan.innerHTML=num+1+'/'+Img1.length;
+oldLi.className=''
+oldLi=oLi[num]
+oldLi.className='active'
+
+}
+fnTab();
+for(i=0;i<Img1.length;i++){
+	oLi[i].index=i;
+		
+	oLi[i].onclick=function(){
+		num=this.index
+		fnTab();
+	}
+	oLi[i].onmouseover=function(){
+		num=this.index
+		preImg.src=Img1[num]
+		preImg.style.top=70*num+'px'
+		preImg.style.display='block'
+	}
+	oLi[i].onmouseout=function(){
+		preImg.style.display='none'
+	}
+}
+
+}
+</script>	
+</head>
+<body>
+<div id="show">
+<span>正在加载</span>
+
+<img src="">
+<p>正在加载中</p>
+<ul id="fuck">
+	<li></li>
+	<li></li>
+	<li></li>	
+	<li></li>
+</ul>
+<img src="" id="preview">
+</div>
+</body>
+</html>

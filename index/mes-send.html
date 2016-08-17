@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">	
+<style type="text/css">
+#content{
+	width: 290px;
+	height: 590px;
+	border: 2px solid #f1f1f1;
+	background: url(../img/phone.png) no-repeat;
+	margin: 0 auto;
+	position: relative;
+}
+#logo{
+	position: absolute;
+	bottom: 88px;
+	left: 28px;
+}
+#text{
+	width:134px;
+	height:30px;
+	position: absolute;
+	bottom: 88px;
+	left: 68px;
+}
+#send{
+	width: 56px;
+	height: 30px;
+	position: absolute;
+	bottom: 88px;
+	right: 24px;
+	font-size: 22px;
+	border: none;
+}
+#contentP{
+	width: 242px;
+	height:370px;
+	position: absolute;
+	top: 86px;
+	left: 26px;
+}
+
+
+.span2{
+	word-break=break-all;
+	border:1px solid black;
+	float:left;
+}
+.span1,.span2{
+	font-size: 12px;
+	line-height: 46px;
+	max-width: 240px;
+}
+.div1{
+	width: 242px;
+	text-align:right;
+	overflow: auto;
+
+}
+.div2{
+	width: 242px;
+	text-align:left;
+	overflow: auto;
+}
+img[src="../img/item-1.gif"]{
+	float: left;
+}
+img[src="../img/item-2.gif"]{
+	float: left;
+}
+.span1{
+	float: right;
+	word-break=break-all;
+	display:inline-block;
+	border:1px solid black;
+	
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+var oImg=document.getElementById('logo')
+var oContent=document.getElementById('contentP')
+var oText=document.getElementById('text')
+var oSend=document.getElementById('send')
+var onOff=true;
+
+
+oImg.onclick=function(){
+	if(onOff){
+		oImg.src='../img/item-2.gif';
+		onOff=false;
+	}
+
+	else{
+		oImg.src='../img/item-1.gif';
+		onOff=true;
+	}
+}
+oSend.onclick=function(){
+	if(onOff==true){
+	oContent.innerHTML='<div class="div1">'+'<span class="span1">'+'<img src="../img/item-1.gif">'+oText.value+'</span>'+'</div>'+oContent.innerHTML}
+	else
+	{
+	oContent.innerHTML='<div class="div2">'+'<span class="span2">'+'<img src="../img/item-2.gif">'+oText.value+'</span>'+'</div>'+oContent.innerHTML}
+	}
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<div id="content">
+<div id="contentP">
+</div>
+<img src="../img/item-1.gif" id="logo" class="123">
+<input type="text" value="" id="text">
+<input type="button" value="发送" id="send">
+</div>
+
+</body>
+</html>

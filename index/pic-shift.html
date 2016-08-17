@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">	
+<style type="text/css">
+div{
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+	position: relative;
+	margin: 0 auto;
+}	
+#nextPages{
+	position: absolute;
+	top:45%;
+	right: 0;
+}
+#lastPages{
+	position: absolute;
+	top:45%;
+	left: 0;
+}
+#img1{
+	position: absolute;
+	top: 35px;
+	left: 30px;
+}
+#showT{
+	position: absolute;
+	top: 0;
+	left:20px;
+}
+#numPages{
+	position: absolute;
+	bottom: 0;
+	left:20px;
+}
+
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+
+		var oNext=document.getElementById('nextPages');
+		var oLast=document.getElementById('lastPages');
+		var oText=document.getElementById('showT');
+		var oPages=document.getElementById('numPages');
+		var oImg=document.getElementById('img1');
+		var num=0;
+		var arrText=['twitter','facebook','linkin','email']
+		var arrImg=['../img/item-1.gif','../img/item-2.gif','../img/item-3.gif','../img/item-4.gif']
+		var oBtn1=document.getElementById('xunhuan');
+		var oBtn2=document.getElementById('shunxu');
+		
+		function abc(){                              
+		 //这个abc（）是在window.onload下面的，所以可以在下面调用。如果在oNext.onclick中 声明这个函数的话，下面oLast.onclick中就不能直接调用abc（）
+		oImg.src=arrImg[num];
+		oText.innerHTML=arrText[num];
+		oPages.innerHTML=num+1+'/'+arrText.length;
+		}
+			oNext.onclick=function(){
+			num++;
+			if(num==arrText.length){
+			num=0;}
+			abc();
+		}
+		oLast.onclick=function(){
+			num--;
+			if(num<0){
+				num=3;
+			}
+			
+			abc();
+		}
+		
+		oBtn1.onclick=function(){
+		oNext.onclick=function(){
+			num++;
+			if(num==arrText.length){
+			num=0;}
+			abc();
+		}
+		oLast.onclick=function(){
+			num--;
+			if(num<0){
+				num=3;
+			}
+			
+			abc();
+		}}
+
+	
+		oBtn2.onclick=function(){
+			
+				oNext.onclick=function()
+				{
+				num++;
+				if(num<0||num+1>arrText.length)
+			{
+				alert('wrong');
+				num=3;
+			}
+				abc();
+				}
+				oLast.onclick=function()
+				{
+				num--;
+				if(num<0||num+1>arrText.length)  
+				 //利用逻辑或，选定其中一个条件语句，由于num在oLast和oNext的onclick中加1减1所以，判断句if要加在onclick语句中。
+			{
+				alert('wrong');
+				num=0;
+			}
+				abc();
+				}
+			}
+
+
+		
+}
+</script>	
+</head>
+<body>
+<div id="box">
+	<input type="button" value=">" id="nextPages">
+	<input type="button" value="<" id="lastPages">
+	<p id="showT">loading</p>
+	<span id="numPages">请稍后</span>
+
+	<img src="" id="img1">
+</div>
+<input type="button" value="循环切换" id="xunhuan">
+<input type="button" value="顺序切换" id="shunxu">
+</body>
+</html>
